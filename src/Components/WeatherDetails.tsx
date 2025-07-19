@@ -6,7 +6,6 @@ import { FiSunrise, FiSunset } from "react-icons/fi";
 const WeatherDetails = () => {
   const { regularData } = useWeather();
   const todaysWeather = regularData?.days[0];
-  console.log(regularData);
 
   const convertTo12Hour = (time24: string) => {
     if (!time24) return "--";
