@@ -65,7 +65,7 @@ VITE_WEATHER_API_KEY=your_api_key_here
 ---
 ## 🔗 Live Demo
 
-👉 [View Live Site](https://my-portfolio-buddheshwar2003.vercel.app/)
+👉 [View Live Site](https://weather-api-website-one.vercel.app//)
 
 ---
 
