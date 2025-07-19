@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+.max-container{
+    max-width: 1440px;
+}
+
+@layer base {
+  :root {
+    --muted-foreground: 220 8% 60%;
+    /* other variables */
+  }
+
+  .dark {
+    --muted-foreground: 220 8% 60%;
+  }
+}
