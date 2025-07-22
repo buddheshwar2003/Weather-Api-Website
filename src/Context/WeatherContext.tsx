@@ -33,8 +33,6 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme ? "dark" : "light");
   };
-
-  // Effect to update the HTML class when theme changes
   useEffect(() => {
     if (theme) {
       document.documentElement.classList.add("dark");
