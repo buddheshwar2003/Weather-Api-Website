@@ -10,8 +10,8 @@ interface ContextType {
   errorMessage: string | null;
   currentTime: string;
   hourlyTime: string;
-  handleTheme:()=>void;
-  theme:boolean;
+  handleTheme: () => void;
+  theme: boolean;
 }
 
 const WeatherContext = createContext<ContextType | undefined>(undefined);
@@ -31,12 +31,16 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
   const handleTheme = () => {
     const newTheme = !theme;
     setTheme(newTheme);
-    document.documentElement.classList.toggle("dark", newTheme);
     localStorage.setItem("theme", newTheme ? "dark" : "light");
   };
 
+  // Effect to update the HTML class when theme changes
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme);
+    if (theme) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   }, [theme]);
 
   useEffect(() => {
@@ -63,7 +67,7 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
         currentTime,
         hourlyTime,
         handleTheme,
-        theme
+        theme,
       }}
     >
       {children}
